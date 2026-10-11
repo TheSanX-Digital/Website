@@ -1,30 +1,43 @@
 # ThesanX Digital — site vitrine
 
-Site statique (HTML / CSS / JavaScript, sans dépendance ni étape de build) présentant les services de ThesanX Digital :
-création de sites web, maintenance, SEO, intégration d'IA, automatisation et hébergement.
+Site de présentation de ThesanX Digital (création de sites web, maintenance, SEO, intégration d'IA,
+automatisation et hébergement), réalisé avec **Next.js 16** (App Router, TypeScript) et **Tailwind CSS 4**.
+Design sombre et sobre : noir chaud, accent or, typographies Space Grotesk / Inter / JetBrains Mono.
 
 ## Structure
 
 ```
-index.html        Page unique (hero, services, méthode, pourquoi nous, contact)
-css/styles.css    Styles (responsive, thème sombre)
-js/main.js        Menu mobile, animations, formulaire de contact
-assets/           Favicon / logo
-robots.txt
+app/
+  layout.tsx       Métadonnées SEO, polices, données structurées schema.org
+  page.tsx         Page d'accueil (assemblage des sections + contact)
+  globals.css      Thème Tailwind (couleurs, polices, boutons btn-primary / btn-secondary…)
+  icon.svg         Favicon
+  robots.ts        /robots.txt
+  sitemap.ts       /sitemap.xml
+components/        Header, Hero, Services, Method, Why, ContactForm, SectionLabel, Footer…
+lib/site.ts        Contenus (services, étapes, atouts) et configuration
 ```
 
-## Lancer en local
+Les textes du site se modifient dans `lib/site.ts` et dans les composants.
+
+## Développement
 
 ```bash
-python3 -m http.server 8000
-# puis ouvrir http://localhost:8000
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # build de production
+npm start          # sert le build
 ```
 
-## À configurer
+## Configuration
 
-- `js/main.js` : renseigner `CONTACT_EMAIL` (adresse qui reçoit les demandes du formulaire).
-- `index.html` : remplacer `<link rel="canonical" href="/">` par l'URL définitive du site, et ajouter un `sitemap.xml` une fois le domaine connu.
+Copier `.env.example` en `.env.local` et renseigner :
+
+- `NEXT_PUBLIC_SITE_URL` : URL publique du site (canonical, Open Graph, sitemap, robots).
+- `NEXT_PUBLIC_CONTACT_EMAIL` : adresse qui reçoit les demandes du formulaire de contact.
 
 ## Déploiement
 
-Le dossier peut être publié tel quel sur n'importe quel hébergement statique (GitHub Pages, Netlify, Vercel, serveur Nginx/Apache…).
+Déployable directement sur Vercel (import du dépôt, aucune configuration particulière), ou sur tout
+hébergement Node.js via `npm run build && npm start`. Penser à définir les variables d'environnement
+ci-dessus sur la plateforme d'hébergement.
