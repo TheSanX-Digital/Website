@@ -1,20 +1,26 @@
 import { steps } from "@/lib/site";
 import Reveal from "./Reveal";
-import SectionHead from "./SectionHead";
+import SectionLabel from "./SectionLabel";
 
 export default function Method() {
   return (
-    <section id="methode" className="bg-ink-alt py-16 sm:py-24 lg:py-28">
+    <section id="methode" className="border-y border-line bg-surface py-24 sm:py-32">
       <div className="wrap">
-        <SectionHead eyebrow="Notre méthode" title="De l'idée à la mise en ligne, et au-delà" />
-        <ol className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <SectionLabel index="02">Méthode</SectionLabel>
+
+        <h2 className="mb-16 max-w-2xl font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl">
+          De l&apos;idée à la mise en ligne, <span className="text-accent">et au-delà.</span>
+        </h2>
+
+        <ol className="grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, i) => (
-            <Reveal as="li" key={step.title} className="rounded-2xl border border-line bg-surface p-7">
-              <span className="text-gradient mb-2.5 inline-block text-2xl font-extrabold">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mb-2 text-lg font-bold">{step.title}</h3>
-              <p className="text-muted">{step.text}</p>
+            <Reveal as="li" key={step.title} className="bg-surface p-8">
+              <div className="mb-10 flex items-center justify-between">
+                <span className="font-mono text-xs text-accent">Étape {String(i + 1).padStart(2, "0")}</span>
+                <span className="size-1.5 rounded-full bg-accent/60" />
+              </div>
+              <h3 className="mb-3 font-display text-xl font-semibold tracking-tight">{step.title}</h3>
+              <p className="text-sm leading-relaxed text-muted">{step.text}</p>
             </Reveal>
           ))}
         </ol>

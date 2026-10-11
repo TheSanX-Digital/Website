@@ -9,42 +9,41 @@ export const navLinks = [
   { href: "#services", label: "Services" },
   { href: "#methode", label: "Méthode" },
   { href: "#pourquoi", label: "Pourquoi nous" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export const services = [
   {
-    icon: "web",
     title: "Création de sites web",
-    text: "Conception, développement et déploiement de sites statiques et dynamiques : vitrines, sites institutionnels, applications web, sur-mesure et responsive.",
+    text: "Conception, développement et déploiement de sites statiques et dynamiques, pensés pour vos objectifs et adaptés à tous les écrans.",
+    points: ["Sites vitrines", "Sites dynamiques", "Applications web"],
   },
   {
-    icon: "maintenance",
     title: "Maintenance & évolution",
-    text: "Maintenance corrective et évolutive de vos sites existants : mises à jour, sécurité, performances, nouvelles fonctionnalités et refonte.",
+    text: "Maintenance et amélioration de vos sites existants : mises à jour, sécurité, performances et nouvelles fonctionnalités.",
+    points: ["Mises à jour", "Sécurité", "Refonte"],
   },
   {
-    icon: "seo",
     title: "Optimisation SEO",
-    text: "Audit, optimisation technique et éditoriale, performances et données structurées pour renforcer votre visibilité sur les moteurs de recherche.",
+    text: "Optimisation technique et éditoriale pour renforcer votre visibilité en ligne et attirer un trafic qualifié.",
+    points: ["Audit", "SEO technique", "Performances"],
   },
   {
-    icon: "ai",
     title: "Intelligence artificielle",
-    text: "Intégration de solutions basées sur l'IA : assistants conversationnels, génération et analyse de contenu, recherche intelligente dans vos données.",
+    text: "Intégration de solutions basées sur l'IA directement dans vos outils et votre site, au service de besoins concrets.",
+    points: ["Assistants", "Analyse de contenu", "Recherche"],
   },
   {
-    icon: "automation",
     title: "Automatisation",
-    text: "Automatisation des processus numériques : workflows, connexions entre outils, synchronisation de données et tâches récurrentes pour gagner du temps.",
+    text: "Automatisation des processus numériques : connexions entre outils, synchronisation de données et tâches récurrentes.",
+    points: ["Workflows", "Intégrations", "Synchronisation"],
   },
   {
-    icon: "hosting",
     title: "Hébergement & déploiement",
-    text: "Gestion de l'hébergement, des noms de domaine, des certificats SSL et des environnements de déploiement (préproduction, production, CI/CD).",
+    text: "Gestion de l'hébergement et des environnements de déploiement pour un site fiable, rapide et toujours disponible.",
+    points: ["Hébergement", "Domaines & SSL", "CI/CD"],
   },
-] as const;
-
-export type ServiceIcon = (typeof services)[number]["icon"];
+];
 
 export const steps = [
   { title: "Écoute & conception", text: "Nous analysons vos besoins, vos objectifs et votre public pour définir la solution adaptée." },
@@ -54,9 +53,9 @@ export const steps = [
 ];
 
 export const strengths = [
-  { title: "Accompagnement de bout en bout", text: "conception, réalisation, mise en ligne et suivi." },
-  { title: "Technologies modernes", text: "sites rapides, sécurisés et adaptés à tous les écrans." },
-  { title: "Visibilité intégrée", text: "le SEO est pensé dès la conception, pas après coup." },
+  { title: "Accompagnement de bout en bout", text: "Conception, réalisation, mise en ligne et suivi." },
+  { title: "Technologies modernes", text: "Sites rapides, sécurisés et adaptés à tous les écrans." },
+  { title: "Visibilité intégrée", text: "Le SEO est pensé dès la conception, pas après coup." },
   { title: "Innovation utile", text: "IA et automatisation au service de gains concrets." },
-  { title: "Fiabilité", text: "hébergement, sauvegardes et environnements maîtrisés." },
+  { title: "Fiabilité", text: "Hébergement, sauvegardes et environnements maîtrisés." },
 ];
